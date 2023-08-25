@@ -130,7 +130,9 @@ if ( ! function_exists( 'generate_scripts' ) ) {
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}
+        wp_enqueue_style( 'generate-style2', $dir_uri . "/style.css", array(), GENERATE_VERSION, 'all' );
 	}
+
 }
 
 if ( ! function_exists( 'generate_widgets_init' ) ) {
@@ -483,3 +485,4 @@ function generate_do_a11y_scripts() {
 		);
 	}
 }
+

@@ -36,7 +36,9 @@ get_header(); ?>
 					 * @since 3.1.0
 					 */
 					do_action( 'generate_before_loop', 'index' );
-
+                    ?>
+                    <main class="card-grid">
+                        <?php
 					while ( have_posts() ) :
 
 						the_post();
@@ -44,6 +46,9 @@ get_header(); ?>
 						generate_do_template_part( 'index' );
 
 					endwhile;
+                    ?>
+                    </main>
+                        <?php
 
 					/**
 					 * generate_after_loop hook.

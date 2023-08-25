@@ -560,7 +560,9 @@ function generate_do_template_part( $template ) {
 	do_action( 'generate_before_do_template_part', $template );
 
 	if ( apply_filters( 'generate_do_template_part', true, $template ) ) {
-		if ( 'archive' === $template || 'index' === $template ) {
+        if ('index' === $template ) {
+            get_template_part( 'card', get_post_format() );
+        }elseif ( 'archive' === $template ) {
 			get_template_part( 'content', get_post_format() );
 		} elseif ( 'none' === $template ) {
 			get_template_part( 'no-results' );
